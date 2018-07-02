@@ -2,6 +2,8 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * User
  */
@@ -9,47 +11,72 @@ class User
 {
     /**
      * @var int
+     * 
+     * @ORM\Column(name="id")
+     * 
      */
     private $id;
 
     /**
      * @var string
+     * 
+     * @ORM\Column(name="firstname")
+     * 
      */
     private $firstname;
 
     /**
      * @var string
+     * 
+     * @ORM\Column(name="lastname")
+     * 
      */
     private $lastname;
 
     /**
      * @var \DateTime
+     * 
+     * @ORM\Column(name="birthday")
+     * 
      */
     private $birthdayType;
 
     /**
      * @var string
+     * 
+     * @ORM\Column(name="email")
+     * 
      */
     private $email;
 
     /**
      * @var string
+     * 
+     * @ORM\Column(name="gender")
+     * 
      */
     private $gender;
 
     /**
      * @var string
+     * 
+     * @ORM\Column(name="country")
+     * 
      */
     private $country;
 
     /**
      * @var string
+     * 
+     * @ORM\Column(name="job")
+     * 
      */
     private $job;
 
 
     /**
      * Get id
+     * 
      *
      * @return int
      */

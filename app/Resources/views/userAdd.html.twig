@@ -2,12 +2,13 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Ajout d'un utilisateur</title>
+    <title>Inscription</title>
 </head>
 <body>
-    
-{{form_start(form)}}
+    <h1>Inscription :</h1></br>
+{{form_start(form, {'attr': {'novalidate': 'novalidate'}})}}
 {{form_widget(form)}}
+<button type="submit">S'inscrire</button>
 {{form_end(form)}}
 
 </body>
