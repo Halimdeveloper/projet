@@ -6,8 +6,9 @@ use AppBundle\Entity\User;
 use AppBundle\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
 
 
 
@@ -30,10 +31,11 @@ class UserController extends Controller
         $form->handleRequest($request);
 
         //si le formulaire a été soumis
-        if ($form->isSubmitted()) {
-            
+        if ($form->isSubmitted() && $form->isValid()) {
+
             //on enregistre l'utilisateur dans la BDD
             $em = $this->getDoctrine()->getManager();   
+            $em->persist($user);
             $em->flush();
 
             return new Response('Utilisateur ajouté dans la base de données');

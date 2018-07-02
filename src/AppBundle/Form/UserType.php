@@ -23,9 +23,12 @@ class UserType extends AbstractType
             ->add('lastname', TextType::class)
             ->add('birthdayType', BirthdayType::class)
             ->add('email', EmailType::class)
-            ->add('gender', ChoiceType::class)
-            ->add('country', ChoiceType::class)
-            ->add('job', ChoiceType::class)
+            ->add('gender', ChoiceType::class, array(
+                'choices' => array('Male' => true,'Female' => false)))
+            ->add('country', ChoiceType::class, array(
+                'choices' => array('France' => true,'Canada' => false)))
+            ->add('job', ChoiceType::class, array(
+                'choices' => array('Cadre' => true,'Cuistot' => false)))
             ;
     }/**
      * {@inheritdoc}

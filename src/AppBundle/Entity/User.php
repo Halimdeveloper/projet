@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
@@ -22,6 +23,8 @@ class User
      * 
      * @ORM\Column(name="firstname")
      * 
+     * @Assert\NotBlank(message="Le prénom est obligatoire")
+     * 
      */
     private $firstname;
 
@@ -29,6 +32,8 @@ class User
      * @var string
      * 
      * @ORM\Column(name="lastname")
+     * 
+     * @Assert\NotBlank(message="Le nom est obligatoire")
      * 
      */
     private $lastname;
@@ -43,6 +48,8 @@ class User
 
     /**
      * @var string
+     * 
+     * @Assert\Email(message="L'email {{value}} n'est pas une adresse email valide.")
      * 
      * @ORM\Column(name="email")
      * 
