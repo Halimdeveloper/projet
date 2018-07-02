@@ -38,8 +38,13 @@ class UserController extends Controller
             $em->persist($user);
             $em->flush();
 
+            //on envoie un email récapitulatif à l'utilisateur et à l'admin
+            
+
+
             //on retourne une réponse
-            return new Response('Utilisateur ajouté dans la base de données');
+            return new Response("Utilisateur ajouté dans la base de données.
+             Vous devriez recevoir un mail de confirmation d'ici quelques minutes.");
         }
 
         //on génère le html du formulaire créé
