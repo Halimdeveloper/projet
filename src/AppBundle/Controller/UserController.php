@@ -38,6 +38,7 @@ class UserController extends Controller
             $em->persist($user);
             $em->flush();
 
+            //on retourne une réponse
             return new Response('Utilisateur ajouté dans la base de données');
         }
 

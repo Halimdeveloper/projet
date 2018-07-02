@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
 
 class UserType extends AbstractType
 {
@@ -24,11 +25,10 @@ class UserType extends AbstractType
             ->add('birthdayType', BirthdayType::class)
             ->add('email', EmailType::class)
             ->add('gender', ChoiceType::class, array(
-                'choices' => array('Male' => true,'Female' => false)))
-            ->add('country', ChoiceType::class, array(
-                'choices' => array('France' => true,'Canada' => false)))
+                'choices' => array('Homme'=>'Homme','Femme'=>'Femme')))
+            ->add('country', CountryType::class)
             ->add('job', ChoiceType::class, array(
-                'choices' => array('Cadre' => true,'Cuistot' => false)))
+                'choices' => array('Cadre'=>'Cadre','Cuistot'=>'Cuistot')))
             ;
     }/**
      * {@inheritdoc}
